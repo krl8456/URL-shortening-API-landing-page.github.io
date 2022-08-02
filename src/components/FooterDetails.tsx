@@ -1,5 +1,4 @@
 import { FooterDetail } from "./interfaces"
-
 function FooterDetails({ title, links }: FooterDetail) {
   return (
     <>
