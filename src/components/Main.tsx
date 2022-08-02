@@ -6,12 +6,11 @@ import Recognition from "../images/icon-brand-recognition.svg";
 import Records from "../images/icon-detailed-records.svg";
 import Customizable from "../images/icon-fully-customizable.svg";
 import Summary from "./Summary";
-import { OneNote } from "./interfaces";
 import Footer from "./Footer";
 import { v4 as uuidv4 } from "uuid";
 
 function Main() {
-  const notes: OneNote[] = [
+  const notes = [
     {
       id: uuidv4(),
       imageSrc: Recognition,
@@ -36,20 +35,24 @@ function Main() {
   ];
   return (
     <>
-      <img
-        src={Background}
-        alt="A person in front of computer"
-        className="Main--background"
-      />
-      <h1 className="Main--header">More than just shorter links</h1>
-      <p className="Main--description">
-        Build your brand's recognition and get detailed insights on how your
-        links are performing.
-      </p>
-      <StartingButton />
+      <div className="Main--main-informations">
+        <img
+          src={Background}
+          alt="A person in front of computer"
+          className="Main--background"
+        />
+        <div className="Main--text-content">
+          <h1 className="Main--header">More than just shorter links</h1>
+          <p className="Main--description">
+            Build your brand's recognition and get detailed insights on how your
+            links are performing.
+          </p>
+          <StartingButton />
+        </div>
+      </div>
       <Form />
       <h3 className="Main--subheader">Advanced statistics</h3>
-      <p className="Main--description">
+      <p className="Main--subdescription">
         Track how your links are performing across the web with our advanced
         statistics dashboard
       </p>

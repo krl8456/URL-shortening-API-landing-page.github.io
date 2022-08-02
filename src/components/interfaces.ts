@@ -1,11 +1,6 @@
 export interface HamburgerProps {
-    toggleMenu(): void
-}
-export interface OneNote {
-    id: string;
-    imageSrc: string;
-    title: string;
-    content: string;
+    toggleMenu(): void;
+    windowWidth: number;
 }
 export interface MenuContent {
     features: string;
@@ -14,6 +9,15 @@ export interface MenuContent {
     login: string;
     signup: string;
     isMenuOpened: boolean;
+    windowWidth: number;
+}
+export interface DesktopMenuContent {
+    features: string;
+    pricing: string;
+    resources: string;
+    login: string;
+    signup: string;
+    windowWidth: number;
 }
 export interface NoteContent {
     imageSrc: string;

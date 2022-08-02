@@ -18,6 +18,7 @@ body {
   height: 6em;
   display: flex;
   align-items: center;
+  background-color: white;
 }
 .Navigation--logo {
   margin-left: 1.5em;
@@ -95,6 +96,10 @@ body {
   color: var(--gray);
   text-align: center;
 }
+.Main--subdescription {
+  color: var(--gray);
+  text-align: center;
+}
 .Main--get-started {
   border: none;
   display: block;
@@ -107,6 +112,9 @@ body {
   font-weight: 700;
   color: white;
   cursor: pointer;
+}
+.Main--main-informations {
+  background-color: white;
 }
 .Form {
   box-sizing: border-box;
@@ -142,6 +150,7 @@ body {
 }
 .Main--subheader {
   text-align: center;
+  color: var(--dark-violet);
 }
 .Note {
   width: 95%;
@@ -211,15 +220,179 @@ body {
 }
 .Main--notes {
   position: relative;
+  padding: 0;
 }
 .Main--notes-line {
   position: absolute;
-  top: 25%;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, -25%);
+  transform: translateXs(-50%);
   z-index: 1;
   margin: auto;
-  height: 75%;
+  height: 100%;
   width: 7px;
   background-color: var(--cyan);
+}
+.DesktopMenu {
+  display: flex;
+  align-items: center;
+  margin-left: 3.5em;
+  gap: 2em;
+  color: var(--gray);
+  font-weight: 700;
+  width: 70%;
+}
+.DesktopMenu--information {
+  cursor: pointer;
+}
+.login-signup {
+  display: flex;
+  gap: 2em;
+  margin-left: auto;
+}
+.login {
+  margin-left: auto;
+}
+.desktop-menu-button {
+  width: 7em;
+  display: block;
+  margin-block: auto;
+  height: 2.2em;
+}
+@media (min-width: 749px) {
+  .Navigation--logo {
+    margin-left: 6.5%;
+  }
+  .Main--main-informations {  
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row-reverse;
+    /* border: 2px solid black; */
+    padding-left: 6.5%;
+    padding-bottom: 5em;
+  }
+  .Main--header, .Main--description {
+    text-align: left;
+  }
+  .Main--header {
+    margin-left: 0;
+    margin-bottom: 0;
+  
+  }
+  .Main--text-content {
+    position: relative;
+  }
+  .Main--text-content > button{
+    position: absolute;
+    left: 0;
+  }
+  .Main--background {
+    height: 20em;
+    width: auto;
+    position: relative;
+    left: 10%;
+  }
+  .Form {
+    flex-direction: row;
+    background-image: url('./images/bg-shorten-desktop.svg');
+    background-size: 100% 100%;
+    padding: 2em 2.4em;
+    border-radius: .7em;
+  }
+  .Form--input {
+    width: 80%;
+  }
+  .Form--submit {
+    box-sizing: content-box;
+    width: 9.3em;
+  }
+  .Main--subheader {
+    margin-top: 4em;
+    font-size: 2em;
+  }
+  .Main--subdescription {
+    width: 25em;
+    margin-inline: auto;
+  }
+  .Main--notes {
+    display: flex;
+    width: 85%;
+    margin-inline: auto;
+  }
+  
+  .Main--notes div:nth-child(1) {
+    bottom: 3em;
+  }
+  .Main--notes div:nth-child(3) {
+    top: 3em;
+  }
+  .Note {
+    box-sizing: border-box;
+    width: 30%;
+    padding-inline: 2em;
+    text-align: left;
+  }
+  .Main--notes-line {
+    width: 80%;
+    height: 7px;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);   
+  }
+  .Note--image-container {
+    width: 4em;
+    height: 4em;
+    top: -5em;
+    left: 4em;
+  }
+  .Note--logo {
+    width: 2em;
+    height: auto;
+  }
+  .Summary {
+    background-image: url('./images/bg-boost-desktop.svg');
+    height: 3em;
+  }
+  .Summary--title {
+    font-size: 2em;
+    margin-top: -1em;
+    margin-bottom: .3em
+  }
+  .Footer {
+    display: flex;
+    padding-bottom: 2em;
+  }
+  .Footer--title {
+    margin-left: 5%;
+  }
+  .Footer--informations {
+    display: flex;
+    margin-left: 13%;
+    gap: 20%;
+  }
+  .Footer--socials {
+    margin-left: 12%;
+    gap: 20%;
+  }
+  .Footer--social {
+    height: 1.5em;
+    width: auto;
+  }
+  .FooterDetails {
+    text-align: left;
+  }
+  @media (max-width: 1000px) {
+    .Footer {
+      flex-direction: column;
+    }
+    .Footer--socials {
+      margin-left: 2%;
+    }
+    .Footer--informations {
+      margin-inline: auto;
+      justify-content:space-evenly;
+      max-width: 100%;
+      padding-inline: 10%;
+    }
+  }
 }

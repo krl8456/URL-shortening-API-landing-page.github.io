@@ -7,8 +7,10 @@ function Menu({
   login,
   signup,
   isMenuOpened,
+  windowWidth
 }: MenuContent) {
-  if (!isMenuOpened) return null;
+  if (!isMenuOpened || windowWidth > 749) return null;
+
   return (
     <div className="Menu">
       <p className="Menu--text">{features}</p>
