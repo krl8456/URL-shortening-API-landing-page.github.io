@@ -1,4 +1,8 @@
-import { NoteContent } from "./interfaces"
+interface NoteContent {
+  imageSrc: string;
+  title: string;
+  content: string;
+}
 
 function Note({ imageSrc, title, content } : NoteContent) {
   return (

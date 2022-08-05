@@ -1,4 +1,11 @@
-import { MenuContent } from "./interfaces";
+interface MenuProps {
+  features: string;
+  pricing: string;
+  resources: string;
+  login: string;
+  signup: string;
+  isMenuOpened: boolean;
+}
 
 function Menu({
   features,
@@ -6,10 +13,9 @@ function Menu({
   resources,
   login,
   signup,
-  isMenuOpened,
-  windowWidth
-}: MenuContent) {
-  if (!isMenuOpened || windowWidth > 749) return null;
+  isMenuOpened,  
+}: MenuProps) {
+  if (!isMenuOpened) return null;
 
   return (
     <div className="Menu">

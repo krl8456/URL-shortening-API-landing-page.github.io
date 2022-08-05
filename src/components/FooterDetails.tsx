@@ -1,4 +1,13 @@
-import { FooterDetail } from "./interfaces"
+export interface FooterDetailLink {
+  id: string;
+  link: string;
+}
+export interface FooterDetail {
+  id: string;
+  title: string;
+  links: FooterDetailLink[];
+}
+
 
 function FooterDetails({ title, links }: FooterDetail) {
   return (

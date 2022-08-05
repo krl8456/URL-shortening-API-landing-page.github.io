@@ -1,10 +1,14 @@
 import StartingButton from "./StartingButton"
+interface SummaryProps {
+  focus(): void;
+}
 
-function Summary() {
+
+function Summary({ focus }: SummaryProps) {
   return (
     <div className="Summary">
         <h2 className="Summary--title">Boost your links today</h2>
-        <StartingButton />
+        <StartingButton focus={focus}/>
     </div>
   )
 }

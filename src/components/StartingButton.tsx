@@ -1,8 +1,10 @@
+interface StartingButtonProps {
+  focus(): void;
+}
 
-
-function StartingButton() {
+function StartingButton({ focus }: StartingButtonProps) {
   return (
-    <button className="Main--get-started">Get Started</button>
+    <button className="Main--get-started" onClick={focus}>Get Started</button>
   )
 }
 

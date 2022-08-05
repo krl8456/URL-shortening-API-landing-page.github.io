@@ -5,43 +5,41 @@ import Hamburger from "./Hamburger";
 import Menu from "./Menu";
 
 function Navigation() {
-
   const [isMenuOpened, setIsMenuOpened] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   useEffect(() => {
     function watchWidth() {
-      setWindowWidth(window.innerWidth)
+      setWindowWidth(window.innerWidth);
     }
 
     window.addEventListener("resize", watchWidth);
 
     return () => {
       window.removeEventListener("resize", watchWidth);
-    }
-  })
+    };
+  });
 
   const NavData = {
     features: "Features",
     pricing: "Pricing",
     resources: "Resources",
     login: "Login",
-    signup: "Sign up"
-  }
+    signup: "Sign up",
+  };
 
   const toggleMenu = () => {
-    setIsMenuOpened(prev => !prev)
-  }
+    setIsMenuOpened((prev) => !prev);
+  };
 
   return (
     <nav className="Navigation">
       <img src={Logo} alt="Logo" className="Navigation--logo" />
-      <Hamburger toggleMenu={toggleMenu} windowWidth={windowWidth}/>
-      <Menu
-        {...NavData}
-        windowWidth={windowWidth}
-        isMenuOpened={isMenuOpened}
-      />
-      <DesktopMenu {...NavData} windowWidth={windowWidth}/>
+      <Hamburger toggleMenu={toggleMenu} windowWidth={windowWidth} />
+      {windowWidth <= 749 ? (
+        <Menu {...NavData} isMenuOpened={isMenuOpened} />
+      ) : (
+        <DesktopMenu {...NavData} />
+      )}
     </nav>
   );
 }

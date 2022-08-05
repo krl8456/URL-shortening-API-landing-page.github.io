@@ -1,4 +1,10 @@
-import { DesktopMenuContent } from "./interfaces";
+interface DesktopMenuProps {
+  features: string;
+  pricing: string;
+  resources: string;
+  login: string;
+  signup: string;
+}
 
 function DesktopMenu({
   features,
@@ -6,9 +12,7 @@ function DesktopMenu({
   resources,
   login,
   signup,
-  windowWidth,
-}: DesktopMenuContent) {
-  if (windowWidth <= 749) return null;
+}: DesktopMenuProps) {
 
   return (
     <div className="DesktopMenu">

@@ -1,4 +1,7 @@
-import { HamburgerProps } from "./interfaces";
+interface HamburgerProps {
+  toggleMenu(): void;
+  windowWidth: number;
+}
 
 export default function Hamburger({ toggleMenu, windowWidth }: HamburgerProps) {
   if (windowWidth > 749) return null;
