@@ -35,7 +35,7 @@ function Navigation() {
     <nav className="Navigation">
       <img src={Logo} alt="Logo" className="Navigation--logo" />
       <Hamburger toggleMenu={toggleMenu} windowWidth={windowWidth} />
-      {windowWidth <= 749 ? (
+      {windowWidth < 780 ? (
         <Menu {...NavData} isMenuOpened={isMenuOpened} />
       ) : (
         <DesktopMenu {...NavData} />

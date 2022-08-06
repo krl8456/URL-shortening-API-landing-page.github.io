@@ -12,7 +12,6 @@ import Link from "./Link";
 
 interface DataShape {
   ok: boolean;
-  // error_code: number | undefined;
   result: {
     code: string;
     short_link: string;
@@ -25,7 +24,6 @@ interface DataShape {
     full_share_link: string;
     original_link: string;
   };
-  // error: string;
 }
 const notes = [
   {
@@ -79,11 +77,6 @@ function Main() {
       return;
     }
     setIsEmpty(false);
-    // if (true) {
-    //   setError(true);
-    //   return;
-    // }
-    // setError(false);
     fetch(`https://api.shrtco.de/v2/shorten?url=${inputContent}/`)
       .then((res) => {
         if (res.ok) {

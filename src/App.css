@@ -30,7 +30,6 @@ body {
   margin-right: 1.5em;
   position: relative;
   cursor: pointer;
-  /* border: 2px solid black; */
 }
 .Hamburger, .Hamburger::before, .Hamburger::after {
   position: absolute;
@@ -115,6 +114,7 @@ body {
 }
 .Main--main-informations {
   background-color: white;
+  overflow-x: hidden;
 }
 .Form {
   box-sizing: border-box;
@@ -254,7 +254,9 @@ body {
 .login-signup {
   display: flex;
   gap: 2em;
-  margin-left: auto;
+  position: absolute;
+  right: 10%;
+  transform: translateX(30%);
 }
 .login {
   margin-left: auto;
@@ -325,14 +327,13 @@ body {
 
 @media (min-width: 780px) {
   .Navigation--logo {
-    margin-left: 6.5%;
+    margin-left: 4.5em;
   }
   .Main--main-informations {  
     box-sizing: border-box;
     display: flex;
+    justify-content: space-between;
     flex-direction: row-reverse;
-    /* border: 2px solid black; */
-    padding-left: 6.5%;
     padding-bottom: 5em;
   }
   .Main--header, .Main--description {
@@ -345,6 +346,7 @@ body {
   }
   .Main--text-content {
     position: relative;
+    left: 4.5em;
   }
   .Main--text-content > button{
     position: absolute;
@@ -354,7 +356,7 @@ body {
     height: 20em;
     width: auto;
     position: relative;
-    left: 10%;
+    left: 5em;
   }
   .Form {
     display: grid;
@@ -363,7 +365,6 @@ body {
     background-size: 100% 100%;
     padding: 2em 2.4em;
     border-radius: .7em;
-    /* height: 8em; */
   }
   .Form--input {
     width: 95%;

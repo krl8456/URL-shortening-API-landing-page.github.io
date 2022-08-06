@@ -4,7 +4,7 @@ interface HamburgerProps {
 }
 
 export default function Hamburger({ toggleMenu, windowWidth }: HamburgerProps) {
-  if (windowWidth > 749) return null;
+  if (windowWidth >= 780) return null;
 
   return (
     <div className="Hamburger-container" onClick={toggleMenu}>
