@@ -19,6 +19,7 @@ function Link({ link, shortened_link }: LinkProps) {
   return (
     <div className="Link">
       <p className="Link--link-content">{link}</p>
+      <div className="Link--line"></div>
       <p className="Link--shortened-link">{shortened_link}</p>
       <button className="Link--copy" style={buttonStyles} onClick={toggleCopy}>{copied ? "Copied!" : "Copy"}</button>
     </div>

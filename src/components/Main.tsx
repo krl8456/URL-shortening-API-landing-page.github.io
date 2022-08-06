@@ -68,10 +68,8 @@ function Main() {
   const focus = () => {
     inputRef.current?.focus();
   };
-  
-  
+
   const handleInput = () => {
-    
     if (inputContent === "") {
       setIsEmpty(true);
       return;
@@ -80,32 +78,34 @@ function Main() {
     fetch(`https://api.shrtco.de/v2/shorten?url=${inputContent}/`)
       .then((res) => {
         if (res.ok) {
-          setError(false)
-          return res.json()
-        } else throw res
+          setError(false);
+          return res.json();
+        } else throw res;
       })
       .then((data) => setLinks((prevLinks) => [data, ...prevLinks]))
-      .catch((err) => setError(true))
+      .catch((err) => setError(true));
     setInputContent("");
   };
 
   return (
     <>
-      <div className="Main--main-informations">
+      <main className="Main--main-informations">
         <img
           src={Background}
           alt="A person in front of computer"
           className="Main--background"
         />
         <div className="Main--text-content">
-          <h1 className="Main--header">More than just shorter links</h1>
+          <header className="Main--header-container">
+            <h1 className="Main--header">More than just shorter links</h1>
+          </header>
           <p className="Main--description">
             Build your brand's recognition and get detailed insights on how your
             links are performing.
           </p>
           <StartingButton focus={focus} />
         </div>
-      </div>
+      </main>
       <Form
         inputContent={inputContent}
         changeInput={changeInput}
@@ -114,19 +114,25 @@ function Main() {
         inputRef={inputRef}
         error={error}
       />
-      {links.map((link) => (
-        <Link
-          key={uuidv4()}
-          link={link.result.original_link}
-          shortened_link={link.result.short_link}
-        />
-      ))}
-      <h3 className="Main--subheader">Advanced statistics</h3>
+      <section className="Main--links">
+        {links.map((link) => (
+          <Link
+            key={uuidv4()}
+            link={link.result.original_link}
+            shortened_link={link.result.short_link}
+          />
+        ))}
+      </section>
+
+      <header className="Main--subheader-container">
+        <h2 className="Main--subheader">Advanced statistics</h2>
+      </header>
       <p className="Main--subdescription">
         Track how your links are performing across the web with our advanced
         statistics dashboard
       </p>
-      <div className="Main--notes">
+
+      <section className="Main--notes">
         {notes.map((el) => (
           <Note
             key={el.id}
@@ -136,7 +142,7 @@ function Main() {
           />
         ))}
         <div className="Main--notes-line"></div>
-      </div>
+      </section>
       <Summary focus={focus} />
     </>
   );

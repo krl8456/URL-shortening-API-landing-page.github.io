@@ -67,7 +67,7 @@ function Footer() {
     },
   ];
   return (
-    <div className="Footer">
+    <footer className="Footer">
       <h3 className="Footer--title">Shortly</h3>
       <div className="Footer--informations">
         {footerInformations.map((el) => (
@@ -85,7 +85,7 @@ function Footer() {
           <img src={Instagram} alt="" className="Footer--social" />
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
 
